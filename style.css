@@ -901,3 +901,30 @@ footer {
     margin-left: 2px;
     animation: cur-blink 1s step-end infinite;
 }
+
+/* ── CONTACT FORM TERMINAL ───────────────────────────────── */
+.contact-form-wrap {
+  background: #0d0d0d;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.contact-form-body {
+  padding: 28px;
+}
+
+.form-control-dark {
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control-dark:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.08), 0 0 12px rgba(0, 255, 255, 0.15);
+  outline: none;
+}
+
+.form-label-mono::before {
+  content: '$ ';
+  color: var(--cyan);
+}
