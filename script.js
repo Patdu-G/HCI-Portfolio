@@ -485,3 +485,95 @@ if (aboutTerminalTarget) {
 
   document.querySelectorAll('.testi-terminal').forEach(el => observer.observe(el));
 })();
+
+
+// ── PROJECT STACK VIEW ────────────────────────────────────
+const stackData = [
+  {
+    num: '01 / FEATURED',
+    title: 'Pagloat',
+    desc: 'A full cruise booking website built in PHP and MySQL on XAMPP. Features a custom dark design system, session-based auth, and dynamic content management.',
+    img: 'static/paglaot.jpg',
+    tags: ['PHP', 'MySQL', 'Bootstrap', 'XAMPP'],
+    link: '#'
+  },
+  {
+    num: '02',
+    title: 'Petals',
+    desc: 'A niche perfume e-commerce store selling designer and artisan scents. Built with a focus on elegant UI and smooth shopping experience.',
+    img: 'static/petals.jpg',
+    tags: ['HTML', 'CSS', 'JavaScript', 'PHP'],
+    link: '#'
+  },
+  {
+    num: '03',
+    title: 'War on Drugs',
+    desc: 'A 2D shooter game built in Python as a political commentary piece. Explores serious social themes through the lens of interactive media.',
+    img: 'static/warpics.jpg',
+    tags: ['Python', 'pygame'],
+    link: '#'
+  }
+];
+
+let stackIndex = 0;
+
+function setProjectView(view) {
+  document.getElementById('projects-grid-view').style.display = view === 'grid' ? '' : 'none';
+  document.getElementById('projects-stack-view').style.display = view === 'stack' ? '' : 'none';
+  document.getElementById('btn-grid').classList.toggle('active', view === 'grid');
+  document.getElementById('btn-stack').classList.toggle('active', view === 'stack');
+  if (view === 'stack') renderStack();
+}
+
+function renderStack() {
+  const cards = document.querySelectorAll('.stack-card');
+  const total = cards.length;
+
+  // Show only the active card
+  cards.forEach((card, i) => {
+    const isActive = i === stackIndex;
+    card.style.opacity = isActive ? '1' : '0';
+    card.style.zIndex  = isActive ? '10' : '0';
+    card.style.transform = 'translateY(0) scale(1)';
+  });
+
+  // Populate peek panels
+  const prevIndex = (stackIndex - 1 + total) % total;
+  const nextIndex = (stackIndex + 1) % total;
+  const prev = stackData[prevIndex];
+  const next = stackData[nextIndex];
+
+  document.getElementById('peek-prev-img').src   = prev.img;
+  document.getElementById('peek-prev-num').textContent   = prev.num;
+  document.getElementById('peek-prev-title').textContent = prev.title;
+  document.getElementById('peek-prev-tags').innerHTML    = prev.tags.map(t => `<span class="project-tag">${t}</span>`).join('');
+
+  document.getElementById('peek-next-img').src   = next.img;
+  document.getElementById('peek-next-num').textContent   = next.num;
+  document.getElementById('peek-next-title').textContent = next.title;
+  document.getElementById('peek-next-tags').innerHTML    = next.tags.map(t => `<span class="project-tag">${t}</span>`).join('');
+}
+
+function stackNav(dir) {
+  const total = stackData.length;
+  stackIndex = (stackIndex + dir + total) % total;
+  closeStackDetail();
+  renderStack();
+}
+
+function openStackDetail(index) {
+  const d = stackData[index];
+  document.getElementById('detail-num').textContent = d.num;
+  document.getElementById('detail-title').textContent = d.title;
+  document.getElementById('detail-desc').textContent = d.desc;
+  document.getElementById('detail-img').src = d.img;
+  document.getElementById('detail-link').href = d.link;
+  document.getElementById('detail-tags').innerHTML = d.tags.map(t => `<span class="project-tag">${t}</span>`).join('');
+  document.getElementById('stack-modal-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeStackDetail() {
+  document.getElementById('stack-modal-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}

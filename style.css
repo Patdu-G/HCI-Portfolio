@@ -928,3 +928,207 @@ footer {
   content: '$ ';
   color: var(--cyan);
 }
+
+/* ── PROJECT VIEW TOGGLE ─────────────────────────────────── */
+.project-view-toggle {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.view-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 6px 16px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  transition: all 0.2s;
+}
+.view-btn.active,
+.view-btn:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.stack-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 48px 0 56px;
+  width: 100%;
+  position: relative;
+}
+.stack-stage {
+  position: relative;
+  width: min(520px, 80vw);
+  height: 540px;
+  flex-shrink: 0;
+}
+.stack-peek {
+  position: relative;
+  width: 220px;
+  height: 540px;
+  flex-shrink: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.stack-peek-prev { margin-right: -8px; }
+.stack-peek-next { margin-left: -8px; }
+.stack-peek-card {
+  position: absolute;
+  top: 0;
+  width: min(520px, 80vw);
+  height: 540px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  opacity: 0.55;
+}
+.stack-peek-prev .stack-peek-card { right: 0; transform-origin: right center; }
+.stack-peek-next .stack-peek-card { left: 0; transform-origin: left center; }
+.stack-peek-card .stack-card-img {
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+}
+.stack-peek-card .stack-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+.stack-peek-card .stack-card-info { padding: 20px 24px; }
+.stack-card {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.45s, box-shadow 0.3s;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+}
+.stack-card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 12px 56px rgba(0,255,255,0.12);
+}
+.stack-card-img {
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+}
+.stack-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.stack-card:hover .stack-card-img img { transform: scale(1.04); }
+.stack-card-info { padding: 24px 28px 20px; }
+.stack-nav {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  z-index: 20;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.stack-nav.stack-prev { left: 12px; }
+.stack-nav.stack-next { right: 12px; }
+.stack-nav:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(0,255,255,0.05);
+}
+
+/* ── STACK DETAIL PANEL ──────────────────────────────────── */
+.stack-detail-panel {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--cyan);
+  padding: 32px;
+  margin-top: 24px;
+  animation: fadeSlideUp 0.3s ease;
+}
+.stack-detail-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.stack-detail-close:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── STACK MODAL ─────────────────────────────────────────── */
+.stack-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.stack-modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.stack-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--cyan);
+  max-width: 860px;
+  width: 100%;
+  position: relative;
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+.stack-modal-overlay.active .stack-modal {
+  transform: translateY(0) scale(1);
+}
+.stack-modal-img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+.stack-modal-body {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

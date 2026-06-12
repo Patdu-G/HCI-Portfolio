@@ -395,7 +395,7 @@
         </div>
     </section>
 
-   <!-- ── PROJECTS ───────────────────────────────────────────── -->
+  <!-- ── PROJECTS ───────────────────────────────────────────── -->
 <section id="projects">
     <div class="container">
         <div class="text-center mb-5 reveal">
@@ -404,78 +404,199 @@
             <div class="divider mx-auto"></div>
         </div>
 
-        <div class="row g-4">
-            <!-- Project 01 -->
-            <div class="col-md-6 col-lg-4 reveal">
-                <div class="project-card">
-                    <div class="project-preview">
-                        <img src="static/paglaot.jpg" alt="Pagloat preview" class="project-img" />
-                        <div class="project-img-overlay"></div>
-                        <span class="featured-badge">★ FEATURED</span>
-                    </div>
-                    <div class="project-card-body">
-                        <div class="project-num">01 / FEATURED</div>
-                        <div class="project-title">Pagloat</div>
-                        <p class="project-desc">A full cruise booking website built in PHP and MySQL on XAMPP. Features a custom dark design system, session-based auth, and dynamic content management.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">PHP</span>
-                            <span class="project-tag">MySQL</span>
-                            <span class="project-tag">Bootstrap</span>
-                            <span class="project-tag">XAMPP</span>
-                        </div>
-                        <a href="#" class="project-link">
-                            <i class="bi bi-arrow-right"></i> View Project
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <!-- View Toggle -->
+        <div class="project-view-toggle reveal">
+            <button class="view-btn active" id="btn-grid" onclick="setProjectView('grid')">
+                <i class="bi bi-grid-3x3-gap"></i> Grid
+            </button>
+            <button class="view-btn" id="btn-stack" onclick="setProjectView('stack')">
+                <i class="bi bi-layers"></i> Stack
+            </button>
+        </div>
 
-            <!-- Project 02 -->
-            <div class="col-md-6 col-lg-4 reveal">
-                <div class="project-card">
-                    <div class="project-preview">
-                        <img src="static/petals.jpg" alt="Petals preview" class="project-img" />
-                        <div class="project-img-overlay"></div>
-                    </div>
-                    <div class="project-card-body">
-                        <div class="project-num">02</div>
-                        <div class="project-title">Petals</div>
-                        <p class="project-desc">A niche perfume e-commerce store selling designer and artisan scents. Built with a focus on elegant UI and smooth shopping experience.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">CSS</span>
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">PHP</span>
+        <!-- Grid View -->
+        <div id="projects-grid-view">
+            <div class="row g-4">
+                <div class="row g-4">
+                    <!-- Project 01 -->
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="project-card">
+                            <div class="project-preview">
+                                <img src="static/paglaot.jpg" alt="Pagloat preview" class="project-img" />
+                                <div class="project-img-overlay"></div>
+                                <span class="featured-badge">★ FEATURED</span>
+                            </div>
+                            <div class="project-card-body">
+                                <div class="project-num">01 / FEATURED</div>
+                                <div class="project-title">Pagloat</div>
+                                <p class="project-desc">A full cruise booking website built in PHP and MySQL on XAMPP. Features a custom dark design system, session-based auth, and dynamic content management.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">PHP</span>
+                                    <span class="project-tag">MySQL</span>
+                                    <span class="project-tag">Bootstrap</span>
+                                    <span class="project-tag">XAMPP</span>
+                                </div>
+                                <a href="#" class="project-link">
+                                    <i class="bi bi-arrow-right"></i> View Project
+                                </a>
+                            </div>
                         </div>
-                        <a href="#" class="project-link">
-                            <i class="bi bi-arrow-right"></i> View Project
-                        </a>
                     </div>
-                </div>
-            </div>
 
-            <!-- Project 03 -->
-            <div class="col-md-6 col-lg-4 reveal">
-                <div class="project-card">
-                    <div class="project-preview">
-                        <img src="static/warpics.jpg" alt="War on Drugs preview" class="project-img" />
-                        <div class="project-img-overlay"></div>
-                    </div>
-                    <div class="project-card-body">
-                        <div class="project-num">03</div>
-                        <div class="project-title">War on Drugs</div>
-                        <p class="project-desc">A 2D shooter game built in Python as a political commentary piece. Explores serious social themes through the lens of interactive media.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">pygame</span>
+                    <!-- Project 02 -->
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="project-card">
+                            <div class="project-preview">
+                                <img src="static/petals.jpg" alt="Petals preview" class="project-img" />
+                                <div class="project-img-overlay"></div>
+                            </div>
+                            <div class="project-card-body">
+                                <div class="project-num">02</div>
+                                <div class="project-title">Petals</div>
+                                <p class="project-desc">A niche perfume e-commerce store selling designer and artisan scents. Built with a focus on elegant UI and smooth shopping experience.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">HTML</span>
+                                    <span class="project-tag">CSS</span>
+                                    <span class="project-tag">JavaScript</span>
+                                    <span class="project-tag">PHP</span>
+                                </div>
+                                <a href="#" class="project-link">
+                                    <i class="bi bi-arrow-right"></i> View Project
+                                </a>
+                            </div>
                         </div>
-                        <a href="#" class="project-link">
-                            <i class="bi bi-arrow-right"></i> View Project
-                        </a>
+                    </div>
+
+                    <!-- Project 03 -->
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="project-card">
+                            <div class="project-preview">
+                                <img src="static/warpics.jpg" alt="War on Drugs preview" class="project-img" />
+                                <div class="project-img-overlay"></div>
+                            </div>
+                            <div class="project-card-body">
+                                <div class="project-num">03</div>
+                                <div class="project-title">War on Drugs</div>
+                                <p class="project-desc">A 2D shooter game built in Python as a political commentary piece. Explores serious social themes through the lens of interactive media.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Python</span>
+                                    <span class="project-tag">pygame</span>
+                                </div>
+                                <a href="#" class="project-link">
+                                    <i class="bi bi-arrow-right"></i> View Project
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Stack View -->
+        <div id="projects-stack-view" style="display:none;">
+            <div class="stack-carousel" style="position:relative;">
+
+                <!-- Peek: Previous card -->
+                <div class="stack-peek stack-peek-prev">
+                    <div class="stack-peek-card">
+                        <div class="stack-card-img"><img src="" alt="" id="peek-prev-img" /></div>
+                        <div class="stack-card-info">
+                            <div class="project-num" id="peek-prev-num"></div>
+                            <div class="project-title" id="peek-prev-title"></div>
+                            <div class="project-tags" id="peek-prev-tags"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-stage" id="stack-stage">
+
+                    <!-- Card 1 -->
+                    <div class="stack-card" data-index="0" onclick="openStackDetail(0)">
+                        <div class="stack-card-img"><img src="static/paglaot.jpg" alt="Pagloat" /></div>
+                        <div class="stack-card-info">
+                            <div class="project-num">01 / FEATURED</div>
+                            <div class="project-title">Pagloat</div>
+                            <p style="font-size:0.82rem;color:var(--text-secondary);margin:8px 0 10px;line-height:1.5;">A full cruise booking website built in PHP and MySQL on XAMPP. Features a custom dark design system and session-based auth.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">PHP</span>
+                                <span class="project-tag">MySQL</span>
+                                <span class="project-tag">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="stack-card" data-index="1" onclick="openStackDetail(1)">
+                        <div class="stack-card-img"><img src="static/petals.jpg" alt="Petals" /></div>
+                        <div class="stack-card-info">
+                            <div class="project-num">02</div>
+                            <div class="project-title">Petals</div>
+                            <p style="font-size:0.82rem;color:var(--text-secondary);margin:8px 0 10px;line-height:1.5;">A niche perfume e-commerce store selling designer and artisan scents. Built with elegant UI and smooth shopping experience.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">HTML</span>
+                                <span class="project-tag">CSS</span>
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="stack-card" data-index="2" onclick="openStackDetail(2)">
+                        <div class="stack-card-img"><img src="static/warpics.jpg" alt="War on Drugs" /></div>
+                        <div class="stack-card-info">
+                            <div class="project-num">03</div>
+                            <div class="project-title">War on Drugs</div>
+                            <p style="font-size:0.82rem;color:var(--text-secondary);margin:8px 0 10px;line-height:1.5;">A 2D shooter game built in Python as political commentary. Explores serious social themes through interactive media.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">pygame</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Peek: Next card -->
+                <div class="stack-peek stack-peek-next">
+                    <div class="stack-peek-card">
+                        <div class="stack-card-img"><img src="" alt="" id="peek-next-img" /></div>
+                        <div class="stack-card-info">
+                            <div class="project-num" id="peek-next-num"></div>
+                            <div class="project-title" id="peek-next-title"></div>
+                            <div class="project-tags" id="peek-next-tags"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="stack-nav stack-prev" onclick="stackNav(-1)"><i class="bi bi-chevron-left"></i></button>
+                <button class="stack-nav stack-next" onclick="stackNav(1)"><i class="bi bi-chevron-right"></i></button>
+            </div>
+
+            <!-- Stack Detail Modal -->
+            <div class="stack-modal-overlay" id="stack-modal-overlay" onclick="closeStackDetail()">
+                <div class="stack-modal" onclick="event.stopPropagation()">
+                    <button class="stack-detail-close" onclick="closeStackDetail()">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img id="detail-img" src="" alt="" class="stack-modal-img" />
+                        </div>
+                        <div class="col-md-6 stack-modal-body">
+                            <div class="project-num" id="detail-num"></div>
+                            <div class="project-title" id="detail-title"></div>
+                            <p class="project-desc" id="detail-desc"></p>
+                            <div class="project-tags" id="detail-tags"></div>
+                            <a href="#" class="project-link mt-3 d-inline-block" id="detail-link">
+                                <i class="bi bi-arrow-right"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
