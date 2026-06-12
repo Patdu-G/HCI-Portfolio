@@ -142,3 +142,118 @@ function cyclePhoto() {
     counter.textContent = `${currentPhoto + 1} / ${photos.length}`;
   }, 620);
 }
+
+// ── HERO TERMINAL ──────────────────────────────────────────
+(function () {
+  const body = document.getElementById('terminal-body');
+  if (!body) return;
+
+  const SEQ = [
+    { type: 'cmd', text: 'whoami' },
+    { type: 'out', parts: [{ cls: 't-cyan', t: 'patrio_gabriel_patdu' }] },
+    { type: 'gap' },
+
+    { type: 'cmd', text: 'ls projects/' },
+    { type: 'out', parts: [{ cls: 't-green', t: 'Pagloat/' }, { cls: 't-muted', t: '  ' }, { cls: 't-green', t: 'WarOnDrugs/' }, { cls: 't-muted', t: '  ' }, { cls: 't-green', t: 'Petals/' }] },
+    { type: 'gap' },
+
+    { type: 'cmd', text: 'cat Pagloat/readme.md' },
+    { type: 'out', parts: [{ cls: 't-white', t: 'PHP cruise booking website' }] },
+    { type: 'out', parts: [{ cls: 't-comment', t: '# MySQL · Bootstrap · XAMPP' }] },
+    { type: 'gap' },
+
+    { type: 'cmd', text: 'cat WarOnDrugs/readme.md' },
+    { type: 'out', parts: [{ cls: 't-white', t: '2D shooter — political commentary' }] },
+    { type: 'out', parts: [{ cls: 't-comment', t: '# Python · pygame' }] },
+    { type: 'gap' },
+
+    { type: 'cmd', text: 'cat Petals/readme.md' },
+    { type: 'out', parts: [{ cls: 't-white', t: 'Niche perfume e-commerce store' }] },
+    { type: 'out', parts: [{ cls: 't-comment', t: '# HTML · CSS · JS · PHP' }] },
+    { type: 'gap' },
+
+    { type: 'cmd', text: 'cat tungtungtungsahur.md' },
+    { type: 'out', parts: [{ cls: 't-white', t: '67676767' }] },
+    { type: 'out', parts: [{ cls: 't-comment', t: '# HTML · CSS · JS · PHP' }] },
+    { type: 'gap' },
+
+    { type: 'cmd', text: 'echo $STATUS' },
+    { type: 'out', parts: [{ cls: 't-cyan', t: 'always_learning...' }, { cls: 't-cyan', t: '∞' }] },
+    { type: 'idle' },
+  ];
+
+  let li = 0, ci = 0, cursorEl = null, cmdSpan = null;
+
+  function removeCursor() {
+    if (cursorEl) { cursorEl.remove(); cursorEl = null; }
+  }
+
+  function addCursor(parent) {
+    removeCursor();
+    cursorEl = document.createElement('span');
+    cursorEl.className = 't-cursor';
+    parent.appendChild(cursorEl);
+  }
+
+  function newLine() {
+    const d = document.createElement('div');
+    d.className = 't-line';
+    body.appendChild(d);
+    return d;
+  }
+
+  function tick() {
+    if (li >= SEQ.length) return;
+    const step = SEQ[li];
+
+    if (step.type === 'gap') {
+      const g = document.createElement('div');
+      g.className = 't-gap';
+      body.appendChild(g);
+      li++; setTimeout(tick, 60); return;
+    }
+
+    if (step.type === 'idle') {
+      const d = newLine();
+      const p = document.createElement('span');
+      p.className = 't-prompt'; p.textContent = '→ '; d.appendChild(p);
+      addCursor(d); li++;
+      setTimeout(restart, 5000); return;
+    }
+
+    if (step.type === 'cmd') {
+      if (ci === 0) {
+        const d = newLine();
+        const p = document.createElement('span');
+        p.className = 't-prompt'; p.textContent = '→ '; d.appendChild(p);
+        cmdSpan = document.createElement('span');
+        cmdSpan.className = 't-cmd'; d.appendChild(cmdSpan);
+        addCursor(d);
+      }
+      if (ci < step.text.length) {
+        cmdSpan.textContent += step.text[ci++];
+        setTimeout(tick, 50 + Math.random() * 40);
+      } else {
+        removeCursor(); ci = 0; li++;
+        setTimeout(tick, 280);
+      }
+      return;
+    }
+
+    if (step.type === 'out') {
+      const d = newLine();
+      step.parts.forEach(pt => {
+        const s = document.createElement('span');
+        s.className = pt.cls; s.textContent = pt.t; d.appendChild(s);
+      });
+      li++; setTimeout(tick, 140); return;
+    }
+  }
+
+  function restart() {
+    body.innerHTML = ''; li = 0; ci = 0; cursorEl = null; cmdSpan = null;
+    setTimeout(tick, 400);
+  }
+
+  setTimeout(tick, 800);
+})();
