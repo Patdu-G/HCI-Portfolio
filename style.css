@@ -224,10 +224,19 @@ section { padding: 100px 0; }
 }
 
 /* ── ABOUT ───────────────────────────────────────────────── */
+
+#about .col-lg-4 {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #about { background: var(--bg-panel); }
 .about-img-wrap {
   position: relative;
   display: inline-block;
+  margin-top: 80px;
 }
 .about-card {
   background: var(--bg-card);
@@ -811,4 +820,84 @@ footer {
 @keyframes cur-blink {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
+}
+/* ── ABOUT TERMINAL ──────────────────────────────────────── */
+.about-terminal {
+    font-family: var(--font-mono);
+    background: #0d0d0d;
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.05);
+}
+
+/* ── TESTIMONIAL TERMINALS ───────────────────────────────── */
+.testi-terminal {
+    font-family: var(--font-mono);
+    background: #0d0d0d;
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.04);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.testi-terminal:hover {
+    border-color: rgba(0, 229, 255, 0.35);
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.1);
+    transform: translateY(-4px);
+}
+.testi-bar {
+    background: #1a1a1a;
+    border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+    padding: 9px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.testi-dots {
+    display: flex;
+    gap: 6px;
+}
+.testi-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.testi-title {
+    flex: 1;
+    text-align: center;
+    font-size: 10px;
+    color: #444;
+    letter-spacing: 0.06em;
+}
+.testi-body {
+    padding: 18px 18px 22px;
+    min-height: 220px;
+    font-size: 12px;
+    line-height: 1.85;
+    color: #ccc;
+}
+.testi-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    min-height: 1.85em;
+}
+.testi-gap { height: 6px; }
+.tt-muted   { color: #444; }
+.tt-cyan    { color: #00e5ff; }
+.tt-white   { color: #ffffff; }
+.tt-green   { color: #00ff88; }
+.tt-yellow  { color: #ffd600; }
+.tt-comment { color: #555; font-style: italic; }
+.tt-msg     { color: #c8d6e5; line-height: 1.7; }
+.tt-cursor {
+    display: inline-block;
+    width: 6px;
+    height: 12px;
+    background: #00e5ff;
+    vertical-align: middle;
+    margin-left: 2px;
+    animation: cur-blink 1s step-end infinite;
 }

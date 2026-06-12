@@ -107,9 +107,9 @@
     <section id="about">
         <div class="container">
             <div class="row align-items-center g-5">
-                <div class="col-lg-4 text-center reveal">
-                    <div class="about-img-wrap d-inline-block">
-                        <div class="about-img-wrap d-inline-block">
+                <div class="col-lg-4 d-flex justify-content-center align-items-center reveal">
+                    <div class="about-img-wrap ">
+                        
                             <div class="card-deck-wrap" id="photo-card" onclick="cyclePhoto()">
 
                                 <!-- Stack shadow cards (decorative) -->
@@ -145,49 +145,26 @@
                                 </div>
 
                             </div>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-lg-8 reveal">
                     <div class="section-label">// 01 — about me</div>
                     <h2 class="section-title">Who I Am</h2>
                     <div class="divider"></div>
-                    <p class="mb-4" style="color: var(--text-secondary); font-size: 0.95rem;">
-                        I'm Patrio Gabriel Patdu — Gab for short — a student developer from Dasmariñas, Cavite. I'm
-                        currently sharpening my skills in web development, working on real-world projects to turn what I
-                        learn in school into something you can actually click on.
-                    </p>
-                    <p class="mb-4" style="color: var(--text-secondary); font-size: 0.95rem;">
-                        I enjoy building websites from scratch and figuring out how the pieces fit together — from
-                        structure and logic to design and user experience. When I'm not coding, I'm usually learning
-                        something new that I didn't know I needed to know.
-                    </p>
-                    <div class="row g-3 mt-2">
-                        <div class="col-md-6">
-                            <div class="about-card">
-                                <div class="about-card-label">Location</div>
-                                <div class="about-card-value">Dasmariñas, Cavite, PH</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="about-card">
-                                <div class="about-card-label">Status</div>
-                                <div class="about-card-value" style="color: var(--cyan);">Available for Opportunities
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="about-card">
-                                <div class="about-card-label">Focus</div>
-                                <div class="about-card-value">Web Development</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="about-card">
-                                <div class="about-card-label">Stack</div>
-                                <div class="about-card-value">HTML · CSS · JS · PHP</div>
-                            </div>
-                        </div>
+                    
+
+<div class="about-terminal mt-4">
+    <div class="terminal-bar">
+        <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+        </div>
+        <span class="terminal-title">about_me.sh</span>
+    </div>
+    <div class="terminal-body" id="about-terminal-body"></div>
+</div>
                     </div>
                 </div>
             </div>
@@ -502,51 +479,63 @@
     </div>
 </section>
 
-    <!-- ── TESTIMONIALS ───────────────────────────────────────── -->
-    <section id="testimonials">
-        <div class="container">
-            <div class="text-center mb-5 reveal">
-                <div class="section-label">// 04 — testimonials</div>
-                <h2 class="section-title">What People Say</h2>
-                <div class="divider mx-auto"></div>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-4 reveal">
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote">"</div>
-                        <p class="testimonial-text">Gab is one of the most dedicated students I've worked with. He takes
-                            feedback seriously and always comes back with something better than expected.</p>
-                        <div class="testimonial-author">Prof. Sample Name</div>
-                        <div class="testimonial-role">IT Instructor — Sample University</div>
-                    </div>
-                </div>
-                <div class="col-md-4 reveal">
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote">"</div>
-                        <p class="testimonial-text">Super reliable teammate. Whenever we had a project, Gab made sure
-                            the code was clean and the design was on point. Great eye for detail.</p>
-                        <div class="testimonial-author">Classmate / Teammate</div>
-                        <div class="testimonial-role">Student Developer</div>
-                    </div>
-                </div>
-                <div class="col-md-4 reveal">
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote">"</div>
-                        <p class="testimonial-text">He built our group's website almost entirely on his own and made it
-                            look professional. Fast learner, good communicator, solid developer.</p>
-                        <div class="testimonial-author">Group Project Member</div>
-                        <div class="testimonial-role">Classmate</div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="text-center mt-4"
-                style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">
-                * Placeholder testimonials — replace with real ones as you collect them.
-            </p>
+   <!-- ── TESTIMONIALS ───────────────────────────────────────── -->
+<section id="testimonials">
+    <div class="container">
+        <div class="text-center mb-5 reveal">
+            <div class="section-label">// 04 — testimonials</div>
+            <h2 class="section-title">What People Say</h2>
+            <div class="divider mx-auto"></div>
         </div>
-    </section>
+
+        <div class="row g-4">
+            <div class="col-md-4 reveal">
+                <div class="testi-terminal" data-testi="0">
+                    <div class="testi-bar">
+                        <div class="testi-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="testi-title">peer_review_01.log</span>
+                    </div>
+                    <div class="testi-body" id="testi-body-0"></div>
+                </div>
+            </div>
+            <div class="col-md-4 reveal">
+                <div class="testi-terminal" data-testi="1">
+                    <div class="testi-bar">
+                        <div class="testi-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="testi-title">peer_review_02.log</span>
+                    </div>
+                    <div class="testi-body" id="testi-body-1"></div>
+                </div>
+            </div>
+            <div class="col-md-4 reveal">
+                <div class="testi-terminal" data-testi="2">
+                    <div class="testi-bar">
+                        <div class="testi-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="testi-title">peer_review_03.log</span>
+                    </div>
+                    <div class="testi-body" id="testi-body-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center mt-4"
+            style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">
+            * Placeholder testimonials — replace with real ones as you collect them.
+        </p>
+    </div>
+</section>
 
     <!-- ── CONTACT ────────────────────────────────────────────── -->
     <section id="contact">
