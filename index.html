@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patrio Gabriel Patdu — Developer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <style>
+    /* ── DESIGN TOKENS ───────────────────────────────────────── */
+    :root {
+      --bg-void:    #080c12;
+      --bg-panel:   #0d1117;
+      --bg-card:    #111820;
+      --bg-card-hover: #161f2b;
+      --border:     #1e2d3d;
+      --border-lit: #2a4060;
+      --cyan:       #00d4ff;
+      --cyan-dim:   rgba(0, 212, 255, 0.12);
+      --cyan-glow:  rgba(0, 212, 255, 0.06);
+      --text-primary:   #e8edf3;
+      --text-secondary: #7a8fa6;
+      --text-muted:     #3d556b;
+      --font-display: 'Syne', sans-serif;
+      --font-body:    'Inter', sans-serif;
+      --font-mono:    'Share Tech Mono', monospace;
+    }
+
+    /* ── BASE ────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-void);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--cyan); color: #000; }
+
+    /* ── SCAN-LINE TEXTURE ───────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.04) 2px,
+        rgba(0,0,0,0.04) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── TYPOGRAPHY ──────────────────────────────────────────── */
+    h1, h2, h3, h4 { font-family: var(--font-display); color: var(--text-primary); }
+    .mono { font-family: var(--font-mono); }
+
+    /* ── NAVBAR ──────────────────────────────────────────────── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      background: transparent;
+      transition: background 0.3s, border-bottom 0.3s;
+    }
+    #navbar.scrolled {
+      background: rgba(8, 12, 18, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--cyan) !important;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .nav-link-item {
+      color: var(--text-secondary) !important;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 4px 0;
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-link-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--cyan);
+      transition: width 0.2s;
+    }
+    .nav-link-item:hover { color: var(--cyan) !important; }
+    .nav-link-item:hover::after { width: 100%; }
+
+    /* ── SECTION SCAFFOLDING ─────────────────────────────────── */
+    section { padding: 100px 0; }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--cyan);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      max-width: 480px;
+    }
+    .divider {
+      width: 40px; height: 2px;
+      background: var(--cyan);
+      margin: 20px 0 40px;
+    }
+
+    /* ── HERO ────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.35;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 30%, transparent 100%);
+    }
+    .hero-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--cyan);
+      background: var(--cyan-dim);
+      border: 1px solid rgba(0,212,255,0.25);
+      padding: 5px 14px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-name {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .hero-name .cyan-accent { color: var(--cyan); }
+    .hero-role {
+      font-family: var(--font-mono);
+      font-size: clamp(0.85rem, 2vw, 1.1rem);
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+    .hero-desc {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      max-width: 520px;
+      margin-bottom: 40px;
+      line-height: 1.75;
+    }
+    .btn-primary-cyan {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000;
+      background: var(--cyan);
+      border: none;
+      padding: 12px 28px;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-primary-cyan:hover { opacity: 0.85; transform: translateY(-1px); color: #000; }
+    .btn-ghost-cyan {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: transparent;
+      border: 1px solid rgba(0,212,255,0.4);
+      padding: 12px 28px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-ghost-cyan:hover { background: var(--cyan-dim); color: var(--cyan); transform: translateY(-1px); }
+    .hero-stats {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--cyan);
+    }
+    .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ── ABOUT ───────────────────────────────────────────────── */
+    #about { background: var(--bg-panel); }
+    .about-img-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .about-img-frame {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 3/4;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-img-frame .placeholder-icon {
+      font-size: 6rem;
+      color: var(--text-muted);
+      opacity: 0.4;
+    }
+    .about-img-corner {
+      position: absolute;
+      width: 24px; height: 24px;
+      border-color: var(--cyan);
+      border-style: solid;
+    }
+    .about-img-corner.tl { top: -8px; left: -8px; border-width: 2px 0 0 2px; }
+    .about-img-corner.br { bottom: -8px; right: -8px; border-width: 0 2px 2px 0; }
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .about-card-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--cyan);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .about-card-value {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    /* ── SKILLS ──────────────────────────────────────────────── */
+    #skills { background: var(--bg-void); }
+
+    /* Filter tabs */
+    .skill-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+    .skill-filter-btn {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 7px 20px;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    .skill-filter-btn:hover { color: var(--cyan); border-color: rgba(0,212,255,0.3); }
+    .skill-filter-btn.active {
+      color: #000;
+      background: var(--cyan);
+      border-color: var(--cyan);
+    }
+
+    /* Skill cards grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 20px 16px 16px;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, background 0.25s, transform 0.2s;
+      opacity: 1;
+      transform: scale(1);
+    }
+    .skill-card.hidden {
+      display: none;
+    }
+    .skill-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 2px;
+      width: 0;
+      background: var(--cyan);
+      transition: width 0.35s ease;
+    }
+    .skill-card:hover { border-color: var(--border-lit); background: var(--bg-card-hover); transform: translateY(-3px); }
+    .skill-card:hover::after { width: 100%; }
+
+    .skill-card-icon {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .skill-card:hover .skill-card-icon { transform: scale(1.15) rotate(-4deg); }
+
+    .skill-card-name {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-primary);
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Radial ring progress */
+    .skill-ring-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .skill-ring {
+      width: 36px; height: 36px;
+      flex-shrink: 0;
+    }
+    .skill-ring circle {
+      fill: none;
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+    .skill-ring .track { stroke: var(--border); }
+    .skill-ring .fill {
+      stroke: var(--cyan);
+      stroke-dasharray: 88;
+      stroke-dashoffset: 88;
+      transition: stroke-dashoffset 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+    .skill-ring-pct {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+
+    /* Category badge */
+    .skill-card-cat {
+      position: absolute;
+      top: 8px; right: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+    }
+    .cat-web    { background: rgba(0,212,255,0.1);  color: var(--cyan); }
+    .cat-lang   { background: rgba(168,85,247,0.1); color: #c084fc; }
+    .cat-tool   { background: rgba(52,211,153,0.1); color: #34d399; }
+    .cat-learning { background: rgba(251,191,36,0.1); color: #fbbf24; }
+
+    /* Pulse on "learning" cards */
+    @keyframes pulse-border {
+      0%, 100% { border-color: var(--border); }
+      50%       { border-color: rgba(251,191,36,0.5); }
+    }
+    .skill-card[data-cat="learning"] { animation: pulse-border 2.5s ease-in-out infinite; }
+    .skill-card[data-cat="learning"]:hover { animation: none; border-color: rgba(251,191,36,0.6); }
+    .skill-card[data-cat="learning"]::after { background: #fbbf24; }
+
+    /* Stagger entrance */
+    @keyframes card-in {
+      from { opacity: 0; transform: translateY(16px) scale(0.96); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .skill-card.animate-in {
+      animation: card-in 0.4s ease forwards;
+    }
+
+    /* ── PROJECTS ────────────────────────────────────────────── */
+    #projects { background: var(--bg-panel); }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 28px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--cyan);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .project-card:hover { border-color: var(--border-lit); background: var(--bg-card-hover); }
+    .project-card:hover::before { transform: scaleX(1); }
+    .project-num {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+    .project-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .project-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .project-tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      padding: 3px 10px;
+      letter-spacing: 0.06em;
+    }
+    .project-link {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .project-link:hover { color: var(--cyan); }
+
+    /* ── TESTIMONIALS ────────────────────────────────────────── */
+    #testimonials { background: var(--bg-void); }
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 32px;
+      height: 100%;
+    }
+    .testimonial-quote {
+      font-size: 2.5rem;
+      color: var(--cyan);
+      font-family: var(--font-display);
+      line-height: 1;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+    .testimonial-text {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-primary);
+    }
+    .testimonial-role {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── CONTACT ─────────────────────────────────────────────── */
+    #contact { background: var(--bg-panel); }
+    .contact-form-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 40px;
+    }
+    .form-label-mono {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .form-control-dark {
+      width: 100%;
+      background: var(--bg-void);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+    .form-control-dark:focus { border-color: var(--cyan); }
+    .form-control-dark::placeholder { color: var(--text-muted); }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .contact-icon {
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .contact-info-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .contact-info-value {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background: var(--bg-void);
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+    }
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 20px;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--cyan); }
+
+    /* ── SCROLL REVEAL ───────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── CURSOR BLINK ────────────────────────────────────────── */
+    .blink {
+      animation: blink 1s step-end infinite;
+      color: var(--cyan);
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* ── MOBILE ──────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      section { padding: 70px 0; }
+      .contact-form-wrap { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ─────────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="#hero" class="nav-brand">pgp.dev<span class="blink">_</span></a>
+      <div class="d-none d-md-flex gap-4">
+        <a href="#about"        class="nav-link-item">About</a>
+        <a href="#skills"       class="nav-link-item">Skills</a>
+        <a href="#projects"     class="nav-link-item">Projects</a>
+        <a href="#testimonials" class="nav-link-item">Testimonials</a>
+        <a href="#contact"      class="nav-link-item">Contact</a>
+      </div>
+      <a href="#" class="btn-ghost-cyan d-none d-md-inline-block" id="resume-btn">
+        <i class="bi bi-download me-1"></i> Resume
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ───────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="hero-tag">Student Developer — Philippines</div>
+          <h1 class="hero-name">
+            Patrio<br>Gabriel<br><span class="cyan-accent">Patdu.</span>
+          </h1>
+          <p class="hero-role">
+            <span id="typed-role"></span><span class="blink">|</span>
+          </p>
+          <p class="hero-desc">
+            Aspiring developer from Dasmariñas, building things with code. Focused on web development, always learning, always shipping.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#projects" class="btn-primary-cyan">View My Work</a>
+            <a href="#contact"  class="btn-ghost-cyan">Get In Touch</a>
+          </div>
+
+          <div class="hero-stats row g-4 mt-2">
+            <div class="col-auto">
+              <div class="stat-num">3+</div>
+              <div class="stat-label">Projects Built</div>
+            </div>
+            <div class="col-auto">
+              <div class="stat-num">2+</div>
+              <div class="stat-label">Years Learning</div>
+            </div>
+            <div class="col-auto">
+              <div class="stat-num">∞</div>
+              <div class="stat-label">Lines to Write</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ──────────────────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-4 text-center reveal">
+          <div class="about-img-wrap d-inline-block">
+            <div class="about-img-frame">
+              <img src="C:\Users\Gabriel\Desktop\hci\static\img.jpg" alt="Patrio Gabriel Patdu" style="width:100%; height:100%; object-fit:cover;" />
+              <div class="about-img-corner tl"></div>
+              <div class="about-img-corner br"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 reveal">
+          <div class="section-label">// 01 — about me</div>
+          <h2 class="section-title">Who I Am</h2>
+          <div class="divider"></div>
+          <p class="mb-4" style="color: var(--text-secondary); font-size: 0.95rem;">
+            I'm Patrio Gabriel Patdu — Gab for short — a student developer from Dasmariñas, Cavite. I'm currently sharpening my skills in web development, working on real-world projects to turn what I learn in school into something you can actually click on.
+          </p>
+          <p class="mb-4" style="color: var(--text-secondary); font-size: 0.95rem;">
+            I enjoy building websites from scratch and figuring out how the pieces fit together — from structure and logic to design and user experience. When I'm not coding, I'm usually learning something new that I didn't know I needed to know.
+          </p>
+          <div class="row g-3 mt-2">
+            <div class="col-md-6">
+              <div class="about-card">
+                <div class="about-card-label">Location</div>
+                <div class="about-card-value">Dasmariñas, Cavite, PH</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="about-card">
+                <div class="about-card-label">Status</div>
+                <div class="about-card-value" style="color: var(--cyan);">Available for Opportunities</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="about-card">
+                <div class="about-card-label">Focus</div>
+                <div class="about-card-value">Web Development</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="about-card">
+                <div class="about-card-label">Stack</div>
+                <div class="about-card-value">HTML · CSS · JS · PHP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ─────────────────────────────────────────────── -->
+  <section id="skills">
+    <div class="container">
+      <div class="text-center mb-4 reveal">
+        <div class="section-label">// 02 — skills</div>
+        <h2 class="section-title">What I Work With</h2>
+        <div class="divider mx-auto"></div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="skill-filter-bar reveal">
+        <button class="skill-filter-btn active" data-filter="all">All</button>
+        <button class="skill-filter-btn" data-filter="web">Web</button>
+        <button class="skill-filter-btn" data-filter="lang">Languages</button>
+        <button class="skill-filter-btn" data-filter="tool">Tools</button>
+        <button class="skill-filter-btn" data-filter="learning">Learning</button>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="skills-grid" id="skills-grid">
+
+        <!-- WEB -->
+        <div class="skill-card reveal" data-cat="web">
+          <span class="skill-card-cat cat-web">Web</span>
+          <span class="skill-card-icon">🌐</span>
+          <div class="skill-card-name">HTML5</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="85"/>
+            </svg>
+            <span class="skill-ring-pct">85%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-cat="web">
+          <span class="skill-card-cat cat-web">Web</span>
+          <span class="skill-card-icon">🎨</span>
+          <div class="skill-card-name">CSS3</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="80"/>
+            </svg>
+            <span class="skill-ring-pct">80%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-cat="web">
+          <span class="skill-card-cat cat-web">Web</span>
+          <span class="skill-card-icon">📦</span>
+          <div class="skill-card-name">Bootstrap 5</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="78"/>
+            </svg>
+            <span class="skill-ring-pct">78%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-cat="web">
+          <span class="skill-card-cat cat-web">Web</span>
+          <span class="skill-card-icon">⚡</span>
+          <div class="skill-card-name">JavaScript</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="65"/>
+            </svg>
+            <span class="skill-ring-pct">65%</span>
+          </div>
+        </div>
+
+        <!-- LANG -->
+        <div class="skill-card reveal" data-cat="lang">
+          <span class="skill-card-cat cat-lang">Lang</span>
+          <span class="skill-card-icon">🐘</span>
+          <div class="skill-card-name">PHP</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="60"/>
+            </svg>
+            <span class="skill-ring-pct">60%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-cat="lang">
+          <span class="skill-card-cat cat-lang">Lang</span>
+          <span class="skill-card-icon">🗄️</span>
+          <div class="skill-card-name">MySQL</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="55"/>
+            </svg>
+            <span class="skill-ring-pct">55%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-cat="lang">
+          <span class="skill-card-cat cat-lang">Lang</span>
+          <span class="skill-card-icon">🔷</span>
+          <div class="skill-card-name">C++</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="50"/>
+            </svg>
+            <span class="skill-ring-pct">50%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-cat="lang">
+          <span class="skill-card-cat cat-lang">Lang</span>
+          <span class="skill-card-icon">🐍</span>
+          <div class="skill-card-name">Python</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="48"/>
+            </svg>
+            <span class="skill-ring-pct">48%</span>
+          </div>
+        </div>
+
+        <!-- TOOLS -->
+        <div class="skill-card reveal" data-cat="tool">
+          <span class="skill-card-cat cat-tool">Tool</span>
+          <span class="skill-card-icon">💻</span>
+          <div class="skill-card-name">VS Code</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="90"/>
+            </svg>
+            <span class="skill-ring-pct">90%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-cat="tool">
+          <span class="skill-card-cat cat-tool">Tool</span>
+          <span class="skill-card-icon">🐙</span>
+          <div class="skill-card-name">Git / GitHub</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="65"/>
+            </svg>
+            <span class="skill-ring-pct">65%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-cat="tool">
+          <span class="skill-card-cat cat-tool">Tool</span>
+          <span class="skill-card-icon">🛠️</span>
+          <div class="skill-card-name">XAMPP</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="72"/>
+            </svg>
+            <span class="skill-ring-pct">72%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-cat="tool">
+          <span class="skill-card-cat cat-tool">Tool</span>
+          <span class="skill-card-icon">🎯</span>
+          <div class="skill-card-name">Figma</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="55"/>
+            </svg>
+            <span class="skill-ring-pct">55%</span>
+          </div>
+        </div>
+
+        <!-- LEARNING -->
+        <div class="skill-card reveal" data-cat="learning">
+          <span class="skill-card-cat cat-learning">Learning</span>
+          <span class="skill-card-icon">⚛️</span>
+          <div class="skill-card-name">React</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="25" style="stroke:#fbbf24"/>
+            </svg>
+            <span class="skill-ring-pct">25%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-cat="learning">
+          <span class="skill-card-cat cat-learning">Learning</span>
+          <span class="skill-card-icon">🟢</span>
+          <div class="skill-card-name">Node.js</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="20" style="stroke:#fbbf24"/>
+            </svg>
+            <span class="skill-ring-pct">20%</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-cat="learning">
+          <span class="skill-card-cat cat-learning">Learning</span>
+          <span class="skill-card-icon">🔷</span>
+          <div class="skill-card-name">TypeScript</div>
+          <div class="skill-ring-wrap">
+            <svg class="skill-ring" viewBox="0 0 36 36">
+              <circle class="track" cx="18" cy="18" r="14"/>
+              <circle class="fill" cx="18" cy="18" r="14" data-pct="15" style="stroke:#fbbf24"/>
+            </svg>
+            <span class="skill-ring-pct">15%</span>
+          </div>
+        </div>
+
+      </div><!-- /skills-grid -->
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ───────────────────────────────────────────── -->
+  <section id="projects">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <div class="section-label">// 03 — projects</div>
+        <h2 class="section-title">Things I've Built</h2>
+        <div class="divider mx-auto"></div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Project 01 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="project-card">
+            <div class="project-num">01 / FEATURED</div>
+            <div class="project-title">Alena — Pearl of the Orient</div>
+            <p class="project-desc">A full cruise booking website built in PHP and MySQL on XAMPP. Features a custom dark design system, session-based auth, and dynamic content management.</p>
+            <div class="project-tags">
+              <span class="project-tag">PHP</span>
+              <span class="project-tag">MySQL</span>
+              <span class="project-tag">Bootstrap</span>
+              <span class="project-tag">XAMPP</span>
+            </div>
+            <a href="#" class="project-link">
+              <i class="bi bi-arrow-right"></i> View Project
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 02 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="project-card">
+            <div class="project-num">02</div>
+            <div class="project-title">Portfolio v1</div>
+            <p class="project-desc">A personal portfolio website designed to showcase my work as a student developer. Built with HTML, CSS, and vanilla JavaScript — no frameworks.</p>
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">JavaScript</span>
+            </div>
+            <a href="#" class="project-link">
+              <i class="bi bi-arrow-right"></i> View Project
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 03 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="project-card">
+            <div class="project-num">03</div>
+            <div class="project-title">Coming Soon</div>
+            <p class="project-desc">More projects in progress. Currently building, learning, and breaking things. Check back here for updates as new work gets shipped.</p>
+            <div class="project-tags">
+              <span class="project-tag">WIP</span>
+            </div>
+            <a href="#contact" class="project-link">
+              <i class="bi bi-arrow-right"></i> Collaborate
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ───────────────────────────────────────── -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <div class="section-label">// 04 — testimonials</div>
+        <h2 class="section-title">What People Say</h2>
+        <div class="divider mx-auto"></div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4 reveal">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">Gab is one of the most dedicated students I've worked with. He takes feedback seriously and always comes back with something better than expected.</p>
+            <div class="testimonial-author">Prof. Sample Name</div>
+            <div class="testimonial-role">IT Instructor — Sample University</div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">Super reliable teammate. Whenever we had a project, Gab made sure the code was clean and the design was on point. Great eye for detail.</p>
+            <div class="testimonial-author">Classmate / Teammate</div>
+            <div class="testimonial-role">Student Developer</div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">He built our group's website almost entirely on his own and made it look professional. Fast learner, good communicator, solid developer.</p>
+            <div class="testimonial-author">Group Project Member</div>
+            <div class="testimonial-role">Classmate</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center mt-4" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">
+        * Placeholder testimonials — replace with real ones as you collect them.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-5 reveal">
+          <div class="section-label">// 05 — contact</div>
+          <h2 class="section-title">Let's Build Something</h2>
+          <div class="divider"></div>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 36px;">
+            Open to internships, collaborations, freelance work, or just a good conversation about code. Drop me a message.
+          </p>
+
+          <div class="contact-info-item">
+            <i class="bi bi-envelope contact-icon"></i>
+            <div>
+              <div class="contact-info-label">Email</div>
+              <div class="contact-info-value">gabriel@example.com</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="bi bi-geo-alt contact-icon"></i>
+            <div>
+              <div class="contact-info-label">Location</div>
+              <div class="contact-info-value">Dasmariñas, Cavite, Philippines</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <i class="bi bi-github contact-icon"></i>
+            <div>
+              <div class="contact-info-label">GitHub</div>
+              <div class="contact-info-value">github.com/yourusername</div>
+            </div>
+          </div>
+
+          <a href="#" class="btn-primary-cyan mt-3" id="download-resume">
+            <i class="bi bi-download me-2"></i>Download Resume
+          </a>
+        </div>
+
+        <div class="col-lg-7 reveal">
+          <div class="contact-form-wrap">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label-mono">Your Name</label>
+                <input type="text" class="form-control-dark" placeholder="Juan dela Cruz" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label-mono">Email Address</label>
+                <input type="email" class="form-control-dark" placeholder="juan@email.com" />
+              </div>
+              <div class="col-12">
+                <label class="form-label-mono">Subject</label>
+                <input type="text" class="form-control-dark" placeholder="Internship Inquiry" />
+              </div>
+              <div class="col-12">
+                <label class="form-label-mono">Message</label>
+                <textarea class="form-control-dark" rows="5" placeholder="Hey Gab, I wanted to reach out about..."></textarea>
+              </div>
+              <div class="col-12 mt-2">
+                <button class="btn-primary-cyan w-100" onclick="handleFormSubmit(this)">
+                  Send Message <i class="bi bi-arrow-right ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer>
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <span class="footer-copy">© 2025 Patrio Gabriel Patdu — Built with HTML, CSS, JS & Bootstrap</span>
+      <div class="footer-links">
+        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="#hero">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    /* ── NAVBAR SCROLL ─────────────────────────────────────── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    /* ── TYPED ROLE ────────────────────────────────────────── */
+    const roles = [
+      'Aspiring Web Developer',
+      'Student Coder',
+      'Front-End Learner',
+      'PHP Builder',
+    ];
+    let ri = 0, ci = 0, deleting = false;
+    const el = document.getElementById('typed-role');
+    function type() {
+      const word = roles[ri];
+      if (!deleting) {
+        el.textContent = word.slice(0, ++ci);
+        if (ci === word.length) { deleting = true; setTimeout(type, 1800); return; }
+      } else {
+        el.textContent = word.slice(0, --ci);
+        if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+      }
+      setTimeout(type, deleting ? 50 : 90);
+    }
+    type();
+
+    /* ── SCROLL REVEAL ─────────────────────────────────────── */
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => io.observe(el));
+
+    /* ── SKILL RINGS ───────────────────────────────────────── */
+    function animateRings(container) {
+      container.querySelectorAll('.skill-ring .fill').forEach(circle => {
+        const pct = parseFloat(circle.dataset.pct);
+        const circumference = 88;
+        const offset = circumference - (pct / 100) * circumference;
+        circle.style.strokeDashoffset = offset;
+      });
+    }
+
+    const ringIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => animateRings(entry.target), 200);
+          ringIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('#skills-grid').forEach(el => ringIO.observe(el));
+
+    /* ── SKILL FILTER ──────────────────────────────────────── */
+    document.querySelectorAll('.skill-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.skill-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        const cards = document.querySelectorAll('.skill-card');
+        cards.forEach((card, i) => {
+          const match = filter === 'all' || card.dataset.cat === filter;
+          card.classList.toggle('hidden', !match);
+          if (match) {
+            card.style.animationDelay = (i * 40) + 'ms';
+            card.classList.remove('animate-in');
+            void card.offsetWidth;
+            card.classList.add('animate-in');
+            setTimeout(() => animateRings(card), i * 40 + 200);
+          }
+        });
+      });
+    });
+
+    /* ── CONTACT FORM ──────────────────────────────────────── */
+    function handleFormSubmit(btn) {
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = '#1a3a2a';
+      btn.style.color = '#4ade80';
+      btn.style.cursor = 'default';
+      setTimeout(() => {
+        btn.textContent = 'Send Message →';
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.style.cursor = '';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
