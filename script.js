@@ -93,3 +93,52 @@
         btn.style.cursor = '';
       }, 3000);
     }
+
+    /* ── PHOTO CARD DECK ───────────────────────────────────── */
+const photos = [
+  'static/img.jpg',
+  'static/img2.jpg',
+  'static/img3.jpg',
+  // add more: 'static/img4.jpg',
+];
+
+let currentPhoto = 0;
+let isFlipping = false;
+
+function cyclePhoto() {
+  if (isFlipping) return;
+  isFlipping = true;
+
+  const inner    = document.getElementById('flip-inner');
+  const front    = document.getElementById('photo-front');
+  const back     = document.getElementById('photo-back');
+  const counter  = document.getElementById('photo-counter');
+
+  const nextIndex = (currentPhoto + 1) % photos.length;
+
+  // Load next photo on the back face
+  back.src = photos[nextIndex];
+
+  // Flip
+  inner.classList.add('flipping');
+
+  setTimeout(() => {
+    // After flip: swap front to the new photo, reset without animation
+    front.src = photos[nextIndex];
+    inner.style.transition = 'none';
+    inner.classList.remove('flipping');
+
+    // Pre-load the one after next on the back
+    const afterNext = (nextIndex + 1) % photos.length;
+    back.src = photos[afterNext];
+
+    // Re-enable transition after reset
+    setTimeout(() => {
+      inner.style.transition = '';
+      isFlipping = false;
+    }, 50);
+
+    currentPhoto = nextIndex;
+    counter.textContent = `${currentPhoto + 1} / ${photos.length}`;
+  }, 620);
+}

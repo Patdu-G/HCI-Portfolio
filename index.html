@@ -1,550 +1,603 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Patrio Gabriel Patdu — Developer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patrio Gabriel Patdu — Developer</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet" />
 
-  <!-- Bootstrap 5 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
 
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-  <link rel="stylesheet" href="style.css" />
+    <!-- Devicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- ── NAVBAR ─────────────────────────────────────────────── -->
-  <nav id="navbar">
-    <div class="container d-flex align-items-center justify-content-between">
-      <a href="#hero" class="nav-brand">pgp.dev<span class="blink">_</span></a>
-      <div class="d-none d-md-flex gap-4">
-        <a href="#about"        class="nav-link-item">About</a>
-        <a href="#skills"       class="nav-link-item">Skills</a>
-        <a href="#projects"     class="nav-link-item">Projects</a>
-        <a href="#testimonials" class="nav-link-item">Testimonials</a>
-        <a href="#contact"      class="nav-link-item">Contact</a>
-      </div>
-      <a href="#" class="btn-ghost-cyan d-none d-md-inline-block" id="resume-btn">
-        <i class="bi bi-download me-1"></i> Resume
-      </a>
-    </div>
-  </nav>
-
-  <!-- ── HERO ───────────────────────────────────────────────── -->
-  <section id="hero">
-    <div class="hero-grid-bg"></div>
-    <div class="container position-relative">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <div class="hero-tag">Student Developer — Philippines</div>
-          <h1 class="hero-name">
-            Patrio<br>Gabriel<br><span class="cyan-accent">Patdu.</span>
-          </h1>
-          <p class="hero-role">
-            <span id="typed-role"></span><span class="blink">|</span>
-          </p>
-          <p class="hero-desc">
-            Aspiring developer from Dasmariñas, building things with code. Focused on web development, always learning, always shipping.
-          </p>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="#projects" class="btn-primary-cyan">View My Work</a>
-            <a href="#contact"  class="btn-ghost-cyan">Get In Touch</a>
-          </div>
-
-          <div class="hero-stats row g-4 mt-2">
-            <div class="col-auto">
-              <div class="stat-num">3+</div>
-              <div class="stat-label">Projects Built</div>
+    <!-- ── NAVBAR ─────────────────────────────────────────────── -->
+    <nav id="navbar">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="#hero" class="nav-brand">pgp.dev<span class="blink">_</span></a>
+            <div class="d-none d-md-flex gap-4">
+                <a href="#about" class="nav-link-item">About</a>
+                <a href="#skills" class="nav-link-item">Skills</a>
+                <a href="#projects" class="nav-link-item">Projects</a>
+                <a href="#testimonials" class="nav-link-item">Testimonials</a>
+                <a href="#contact" class="nav-link-item">Contact</a>
             </div>
-            <div class="col-auto">
-              <div class="stat-num">2+</div>
-              <div class="stat-label">Years Learning</div>
-            </div>
-            <div class="col-auto">
-              <div class="stat-num">∞</div>
-              <div class="stat-label">Lines to Write</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── ABOUT ──────────────────────────────────────────────── -->
-  <section id="about">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-4 text-center reveal">
-          <div class="about-img-wrap d-inline-block">
-            <div class="about-img-frame">
-              <img src="C:\Users\Gabriel\Desktop\hci\static\img.jpg" alt="Patrio Gabriel Patdu" style="width:100%; height:100%; object-fit:cover;" />
-              <div class="about-img-corner tl"></div>
-              <div class="about-img-corner br"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-8 reveal">
-          <div class="section-label">// 01 — about me</div>
-          <h2 class="section-title">Who I Am</h2>
-          <div class="divider"></div>
-          <p class="mb-4" style="color: var(--text-secondary); font-size: 0.95rem;">
-            I'm Patrio Gabriel Patdu — Gab for short — a student developer from Dasmariñas, Cavite. I'm currently sharpening my skills in web development, working on real-world projects to turn what I learn in school into something you can actually click on.
-          </p>
-          <p class="mb-4" style="color: var(--text-secondary); font-size: 0.95rem;">
-            I enjoy building websites from scratch and figuring out how the pieces fit together — from structure and logic to design and user experience. When I'm not coding, I'm usually learning something new that I didn't know I needed to know.
-          </p>
-          <div class="row g-3 mt-2">
-            <div class="col-md-6">
-              <div class="about-card">
-                <div class="about-card-label">Location</div>
-                <div class="about-card-value">Dasmariñas, Cavite, PH</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="about-card">
-                <div class="about-card-label">Status</div>
-                <div class="about-card-value" style="color: var(--cyan);">Available for Opportunities</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="about-card">
-                <div class="about-card-label">Focus</div>
-                <div class="about-card-value">Web Development</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="about-card">
-                <div class="about-card-label">Stack</div>
-                <div class="about-card-value">HTML · CSS · JS · PHP</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SKILLS ─────────────────────────────────────────────── -->
-  <section id="skills">
-    <div class="container">
-      <div class="text-center mb-4 reveal">
-        <div class="section-label">// 02 — skills</div>
-        <h2 class="section-title">What I Work With</h2>
-        <div class="divider mx-auto"></div>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="skill-filter-bar reveal">
-        <button class="skill-filter-btn active" data-filter="all">All</button>
-        <button class="skill-filter-btn" data-filter="web">Web</button>
-        <button class="skill-filter-btn" data-filter="lang">Languages</button>
-        <button class="skill-filter-btn" data-filter="tool">Tools</button>
-        <button class="skill-filter-btn" data-filter="learning">Learning</button>
-      </div>
-
-      <!-- Cards Grid -->
-      <div class="skills-grid" id="skills-grid">
-
-        <!-- WEB -->
-        <div class="skill-card reveal" data-cat="web">
-          <span class="skill-card-cat cat-web">Web</span>
-          <span class="skill-card-icon">🌐</span>
-          <div class="skill-card-name">HTML5</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="85"/>
-            </svg>
-            <span class="skill-ring-pct">85%</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal" data-cat="web">
-          <span class="skill-card-cat cat-web">Web</span>
-          <span class="skill-card-icon">🎨</span>
-          <div class="skill-card-name">CSS3</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="80"/>
-            </svg>
-            <span class="skill-ring-pct">80%</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal" data-cat="web">
-          <span class="skill-card-cat cat-web">Web</span>
-          <span class="skill-card-icon">📦</span>
-          <div class="skill-card-name">Bootstrap 5</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="78"/>
-            </svg>
-            <span class="skill-ring-pct">78%</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal" data-cat="web">
-          <span class="skill-card-cat cat-web">Web</span>
-          <span class="skill-card-icon">⚡</span>
-          <div class="skill-card-name">JavaScript</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="65"/>
-            </svg>
-            <span class="skill-ring-pct">65%</span>
-          </div>
-        </div>
-
-        <!-- LANG -->
-        <div class="skill-card reveal" data-cat="lang">
-          <span class="skill-card-cat cat-lang">Lang</span>
-          <span class="skill-card-icon">🐘</span>
-          <div class="skill-card-name">PHP</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="60"/>
-            </svg>
-            <span class="skill-ring-pct">60%</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal" data-cat="lang">
-          <span class="skill-card-cat cat-lang">Lang</span>
-          <span class="skill-card-icon">🗄️</span>
-          <div class="skill-card-name">MySQL</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="55"/>
-            </svg>
-            <span class="skill-ring-pct">55%</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal" data-cat="lang">
-          <span class="skill-card-cat cat-lang">Lang</span>
-          <span class="skill-card-icon">🔷</span>
-          <div class="skill-card-name">C++</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="50"/>
-            </svg>
-            <span class="skill-ring-pct">50%</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal" data-cat="lang">
-          <span class="skill-card-cat cat-lang">Lang</span>
-          <span class="skill-card-icon">🐍</span>
-          <div class="skill-card-name">Python</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="48"/>
-            </svg>
-            <span class="skill-ring-pct">48%</span>
-          </div>
-        </div>
-
-        <!-- TOOLS -->
-        <div class="skill-card reveal" data-cat="tool">
-          <span class="skill-card-cat cat-tool">Tool</span>
-          <span class="skill-card-icon">💻</span>
-          <div class="skill-card-name">VS Code</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="90"/>
-            </svg>
-            <span class="skill-ring-pct">90%</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal" data-cat="tool">
-          <span class="skill-card-cat cat-tool">Tool</span>
-          <span class="skill-card-icon">🐙</span>
-          <div class="skill-card-name">Git / GitHub</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="65"/>
-            </svg>
-            <span class="skill-ring-pct">65%</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal" data-cat="tool">
-          <span class="skill-card-cat cat-tool">Tool</span>
-          <span class="skill-card-icon">🛠️</span>
-          <div class="skill-card-name">XAMPP</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="72"/>
-            </svg>
-            <span class="skill-ring-pct">72%</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal" data-cat="tool">
-          <span class="skill-card-cat cat-tool">Tool</span>
-          <span class="skill-card-icon">🎯</span>
-          <div class="skill-card-name">Figma</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="55"/>
-            </svg>
-            <span class="skill-ring-pct">55%</span>
-          </div>
-        </div>
-
-        <!-- LEARNING -->
-        <div class="skill-card reveal" data-cat="learning">
-          <span class="skill-card-cat cat-learning">Learning</span>
-          <span class="skill-card-icon">⚛️</span>
-          <div class="skill-card-name">React</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="25" style="stroke:#fbbf24"/>
-            </svg>
-            <span class="skill-ring-pct">25%</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal" data-cat="learning">
-          <span class="skill-card-cat cat-learning">Learning</span>
-          <span class="skill-card-icon">🟢</span>
-          <div class="skill-card-name">Node.js</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="20" style="stroke:#fbbf24"/>
-            </svg>
-            <span class="skill-ring-pct">20%</span>
-          </div>
-        </div>
-
-        <div class="skill-card reveal" data-cat="learning">
-          <span class="skill-card-cat cat-learning">Learning</span>
-          <span class="skill-card-icon">🔷</span>
-          <div class="skill-card-name">TypeScript</div>
-          <div class="skill-ring-wrap">
-            <svg class="skill-ring" viewBox="0 0 36 36">
-              <circle class="track" cx="18" cy="18" r="14"/>
-              <circle class="fill" cx="18" cy="18" r="14" data-pct="15" style="stroke:#fbbf24"/>
-            </svg>
-            <span class="skill-ring-pct">15%</span>
-          </div>
-        </div>
-
-      </div><!-- /skills-grid -->
-    </div>
-  </section>
-
-  <!-- ── PROJECTS ───────────────────────────────────────────── -->
-  <section id="projects">
-    <div class="container">
-      <div class="text-center mb-5 reveal">
-        <div class="section-label">// 03 — projects</div>
-        <h2 class="section-title">Things I've Built</h2>
-        <div class="divider mx-auto"></div>
-      </div>
-
-      <div class="row g-4">
-        <!-- Project 01 -->
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="project-card">
-            <div class="project-num">01 / FEATURED</div>
-            <div class="project-title">Alena — Pearl of the Orient</div>
-            <p class="project-desc">A full cruise booking website built in PHP and MySQL on XAMPP. Features a custom dark design system, session-based auth, and dynamic content management.</p>
-            <div class="project-tags">
-              <span class="project-tag">PHP</span>
-              <span class="project-tag">MySQL</span>
-              <span class="project-tag">Bootstrap</span>
-              <span class="project-tag">XAMPP</span>
-            </div>
-            <a href="#" class="project-link">
-              <i class="bi bi-arrow-right"></i> View Project
+            <a href="#" class="btn-ghost-cyan d-none d-md-inline-block" id="resume-btn">
+                <i class="bi bi-download me-1"></i> Resume
             </a>
-          </div>
         </div>
+    </nav>
 
-        <!-- Project 02 -->
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="project-card">
-            <div class="project-num">02</div>
-            <div class="project-title">Portfolio v1</div>
-            <p class="project-desc">A personal portfolio website designed to showcase my work as a student developer. Built with HTML, CSS, and vanilla JavaScript — no frameworks.</p>
-            <div class="project-tags">
-              <span class="project-tag">HTML</span>
-              <span class="project-tag">CSS</span>
-              <span class="project-tag">JavaScript</span>
+    <!-- ── HERO ───────────────────────────────────────────────── -->
+    <section id="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="hero-tag">Student Developer — Philippines</div>
+                    <h1 class="hero-name">
+                        Patrio<br>Gabriel<br><span class="cyan-accent">Patdu.</span>
+                    </h1>
+                    <p class="hero-role">
+                        <span id="typed-role"></span><span class="blink">|</span>
+                    </p>
+                    <p class="hero-desc">
+                        Aspiring developer from Dasmariñas, building things with code. Focused on web development,
+                        always learning, always shipping.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#projects" class="btn-primary-cyan">View My Work</a>
+                        <a href="#contact" class="btn-ghost-cyan">Get In Touch</a>
+                    </div>
+
+                    <div class="hero-stats row g-4 mt-2">
+                        <div class="col-auto">
+                            <div class="stat-num">3+</div>
+                            <div class="stat-label">Projects Built</div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="stat-num">2+</div>
+                            <div class="stat-label">Years Learning</div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="stat-num">∞</div>
+                            <div class="stat-label">Lines to Write</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a href="#" class="project-link">
-              <i class="bi bi-arrow-right"></i> View Project
-            </a>
-          </div>
         </div>
+    </section>
 
-        <!-- Project 03 -->
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="project-card">
-            <div class="project-num">03</div>
-            <div class="project-title">Coming Soon</div>
-            <p class="project-desc">More projects in progress. Currently building, learning, and breaking things. Check back here for updates as new work gets shipped.</p>
-            <div class="project-tags">
-              <span class="project-tag">WIP</span>
-            </div>
-            <a href="#contact" class="project-link">
-              <i class="bi bi-arrow-right"></i> Collaborate
-            </a>
-          </div>
+    <!-- ── ABOUT ──────────────────────────────────────────────── -->
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-4 text-center reveal">
+                    <div class="about-img-wrap d-inline-block">
+                        <div class="about-img-wrap d-inline-block">
+  <div class="card-deck-wrap" id="photo-card" onclick="cyclePhoto()">
+
+    <!-- Stack shadow cards (decorative) -->
+    <div class="deck-shadow deck-shadow-2"></div>
+    <div class="deck-shadow deck-shadow-1"></div>
+
+    <!-- The actual flipping card -->
+    <div class="flip-card" id="flip-card">
+      <div class="flip-card-inner" id="flip-inner">
+        <div class="flip-card-front">
+          <img id="photo-front" src="static/img.jpg" alt="Patrio Gabriel Patdu" />
+        </div>
+        <div class="flip-card-back">
+          <img id="photo-back" src="static/img2.jpg" alt="Patrio Gabriel Patdu" />
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ── TESTIMONIALS ───────────────────────────────────────── -->
-  <section id="testimonials">
-    <div class="container">
-      <div class="text-center mb-5 reveal">
-        <div class="section-label">// 04 — testimonials</div>
-        <h2 class="section-title">What People Say</h2>
-        <div class="divider mx-auto"></div>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-4 reveal">
-          <div class="testimonial-card">
-            <div class="testimonial-quote">"</div>
-            <p class="testimonial-text">Gab is one of the most dedicated students I've worked with. He takes feedback seriously and always comes back with something better than expected.</p>
-            <div class="testimonial-author">Prof. Sample Name</div>
-            <div class="testimonial-role">IT Instructor — Sample University</div>
-          </div>
-        </div>
-        <div class="col-md-4 reveal">
-          <div class="testimonial-card">
-            <div class="testimonial-quote">"</div>
-            <p class="testimonial-text">Super reliable teammate. Whenever we had a project, Gab made sure the code was clean and the design was on point. Great eye for detail.</p>
-            <div class="testimonial-author">Classmate / Teammate</div>
-            <div class="testimonial-role">Student Developer</div>
-          </div>
-        </div>
-        <div class="col-md-4 reveal">
-          <div class="testimonial-card">
-            <div class="testimonial-quote">"</div>
-            <p class="testimonial-text">He built our group's website almost entirely on his own and made it look professional. Fast learner, good communicator, solid developer.</p>
-            <div class="testimonial-author">Group Project Member</div>
-            <div class="testimonial-role">Classmate</div>
-          </div>
-        </div>
-      </div>
-
-      <p class="text-center mt-4" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">
-        * Placeholder testimonials — replace with real ones as you collect them.
-      </p>
+    <!-- Click hint -->
+    <div class="position-absolute bottom-0 end-0 m-2">
+      <span class="badge bg-dark border border-secondary" style="font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.08em;">
+        <i class="bi bi-arrow-repeat me-1"></i>click to flip
+      </span>
     </div>
-  </section>
 
-  <!-- ── CONTACT ────────────────────────────────────────────── -->
-  <section id="contact">
-    <div class="container">
-      <div class="row g-5 align-items-start">
-        <div class="col-lg-5 reveal">
-          <div class="section-label">// 05 — contact</div>
-          <h2 class="section-title">Let's Build Something</h2>
-          <div class="divider"></div>
-          <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 36px;">
-            Open to internships, collaborations, freelance work, or just a good conversation about code. Drop me a message.
-          </p>
-
-          <div class="contact-info-item">
-            <i class="bi bi-envelope contact-icon"></i>
-            <div>
-              <div class="contact-info-label">Email</div>
-              <div class="contact-info-value">gabriel@example.com</div>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <i class="bi bi-geo-alt contact-icon"></i>
-            <div>
-              <div class="contact-info-label">Location</div>
-              <div class="contact-info-value">Dasmariñas, Cavite, Philippines</div>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <i class="bi bi-github contact-icon"></i>
-            <div>
-              <div class="contact-info-label">GitHub</div>
-              <div class="contact-info-value">github.com/yourusername</div>
-            </div>
-          </div>
-
-          <a href="#" class="btn-primary-cyan mt-3" id="download-resume">
-            <i class="bi bi-download me-2"></i>Download Resume
-          </a>
-        </div>
-
-        <div class="col-lg-7 reveal">
-          <div class="contact-form-wrap">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label-mono">Your Name</label>
-                <input type="text" class="form-control-dark" placeholder="Juan dela Cruz" />
-              </div>
-              <div class="col-md-6">
-                <label class="form-label-mono">Email Address</label>
-                <input type="email" class="form-control-dark" placeholder="juan@email.com" />
-              </div>
-              <div class="col-12">
-                <label class="form-label-mono">Subject</label>
-                <input type="text" class="form-control-dark" placeholder="Internship Inquiry" />
-              </div>
-              <div class="col-12">
-                <label class="form-label-mono">Message</label>
-                <textarea class="form-control-dark" rows="5" placeholder="Hey Gab, I wanted to reach out about..."></textarea>
-              </div>
-              <div class="col-12 mt-2">
-                <button class="btn-primary-cyan w-100" onclick="handleFormSubmit(this)">
-                  Send Message <i class="bi bi-arrow-right ms-1"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Photo counter -->
+    <div class="position-absolute top-0 start-0 m-2">
+      <span class="badge bg-dark border border-secondary" id="photo-counter" style="font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.08em;">
+        1 / 3
+      </span>
     </div>
-  </section>
 
-  <!-- ── FOOTER ─────────────────────────────────────────────── -->
-  <footer>
-    <div class="container d-flex flex-wrap justify-content-between align-items-center">
-      <span class="footer-copy">© 2025 Patrio Gabriel Patdu — Built with HTML, CSS, JS & Bootstrap</span>
-      <div class="footer-links">
-        <a href="https://github.com/" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
-        <a href="#hero">Back to top ↑</a>
-      </div>
-    </div>
-  </footer>
+  </div>
+</div>
+                    </div>
+                </div>
+                <div class="col-lg-8 reveal">
+                    <div class="section-label">// 01 — about me</div>
+                    <h2 class="section-title">Who I Am</h2>
+                    <div class="divider"></div>
+                    <p class="mb-4" style="color: var(--text-secondary); font-size: 0.95rem;">
+                        I'm Patrio Gabriel Patdu — Gab for short — a student developer from Dasmariñas, Cavite. I'm
+                        currently sharpening my skills in web development, working on real-world projects to turn what I
+                        learn in school into something you can actually click on.
+                    </p>
+                    <p class="mb-4" style="color: var(--text-secondary); font-size: 0.95rem;">
+                        I enjoy building websites from scratch and figuring out how the pieces fit together — from
+                        structure and logic to design and user experience. When I'm not coding, I'm usually learning
+                        something new that I didn't know I needed to know.
+                    </p>
+                    <div class="row g-3 mt-2">
+                        <div class="col-md-6">
+                            <div class="about-card">
+                                <div class="about-card-label">Location</div>
+                                <div class="about-card-value">Dasmariñas, Cavite, PH</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-card">
+                                <div class="about-card-label">Status</div>
+                                <div class="about-card-value" style="color: var(--cyan);">Available for Opportunities
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-card">
+                                <div class="about-card-label">Focus</div>
+                                <div class="about-card-value">Web Development</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-card">
+                                <div class="about-card-label">Stack</div>
+                                <div class="about-card-value">HTML · CSS · JS · PHP</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ── SKILLS ─────────────────────────────────────────────── -->
+    <section id="skills">
+        <div class="container">
+            <div class="text-center mb-4 reveal">
+                <div class="section-label">// 02 — skills</div>
+                <h2 class="section-title">What I Work With</h2>
+                <div class="divider mx-auto"></div>
+            </div>
 
-  <script src="script.js"></script>
+            <!-- Filter Tabs -->
+            <div class="skill-filter-bar reveal">
+                <button class="skill-filter-btn active" data-filter="all">All</button>
+                <button class="skill-filter-btn" data-filter="web">Web</button>
+                <button class="skill-filter-btn" data-filter="lang">Languages</button>
+                <button class="skill-filter-btn" data-filter="tool">Tools</button>
+                <button class="skill-filter-btn" data-filter="learning">Learning</button>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="skills-grid" id="skills-grid">
+
+                <!-- WEB -->
+                <div class="skill-card reveal" data-cat="web">
+                    <span class="skill-card-cat cat-web">Web</span>
+                    <i class="devicon-html5-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">HTML5</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="85" />
+                        </svg>
+                        <span class="skill-ring-pct">85%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-cat="web">
+                    <span class="skill-card-cat cat-web">Web</span>
+                    <i class="devicon-css3-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">CSS3</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="80" />
+                        </svg>
+                        <span class="skill-ring-pct">80%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-cat="web">
+                    <span class="skill-card-cat cat-web">Web</span>
+                    <i class="devicon-bootstrap-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">Bootstrap 5</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="78" />
+                        </svg>
+                        <span class="skill-ring-pct">78%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-cat="web">
+                    <span class="skill-card-cat cat-web">Web</span>
+                    <i class="devicon-javascript-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">JavaScript</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="65" />
+                        </svg>
+                        <span class="skill-ring-pct">65%</span>
+                    </div>
+                </div>
+
+                <!-- LANG -->
+                <div class="skill-card reveal" data-cat="lang">
+                    <span class="skill-card-cat cat-lang">Lang</span>
+                    <i class="devicon-php-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">PHP</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="60" />
+                        </svg>
+                        <span class="skill-ring-pct">60%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-cat="lang">
+                    <span class="skill-card-cat cat-lang">Lang</span>
+                    <i class="devicon-mysql-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">MySQL</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="55" />
+                        </svg>
+                        <span class="skill-ring-pct">55%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-cat="lang">
+                    <span class="skill-card-cat cat-lang">Lang</span>
+                    <i class="devicon-cplusplus-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">C++</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="50" />
+                        </svg>
+                        <span class="skill-ring-pct">50%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-cat="lang">
+                    <span class="skill-card-cat cat-lang">Lang</span>
+                    <i class="devicon-python-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">Python</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="48" />
+                        </svg>
+                        <span class="skill-ring-pct">48%</span>
+                    </div>
+                </div>
+
+                <!-- TOOLS -->
+                <div class="skill-card reveal" data-cat="tool">
+                    <span class="skill-card-cat cat-tool">Tool</span>
+                    <i class="devicon-vscode-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">VS Code</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="90" />
+                        </svg>
+                        <span class="skill-ring-pct">90%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-cat="tool">
+                    <span class="skill-card-cat cat-tool">Tool</span>
+                    <i class="devicon-git-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">Git / GitHub</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="65" />
+                        </svg>
+                        <span class="skill-ring-pct">65%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-cat="tool">
+                    <span class="skill-card-cat cat-tool">Tool</span>
+                    <i class="devicon-apache-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">XAMPP</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="72" />
+                        </svg>
+                        <span class="skill-ring-pct">72%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-cat="tool">
+                    <span class="skill-card-cat cat-tool">Tool</span>
+                    <i class="devicon-figma-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">Figma</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="55" />
+                        </svg>
+                        <span class="skill-ring-pct">55%</span>
+                    </div>
+                </div>
+
+                <!-- LEARNING -->
+                <div class="skill-card reveal" data-cat="learning">
+                    <span class="skill-card-cat cat-learning">Learning</span>
+                    <i class="devicon-react-original colored skill-card-icon"></i>
+                    <div class="skill-card-name">React</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="25" style="stroke:#fbbf24" />
+                        </svg>
+                        <span class="skill-ring-pct">25%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-cat="learning">
+                    <span class="skill-card-cat cat-learning">Learning</span>
+                    <i class="devicon-nodejs-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">Node.js</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="20" style="stroke:#fbbf24" />
+                        </svg>
+                        <span class="skill-ring-pct">20%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card reveal" data-cat="learning">
+                    <span class="skill-card-cat cat-learning">Learning</span>
+                    <i class="devicon-typescript-plain colored skill-card-icon"></i>
+                    <div class="skill-card-name">TypeScript</div>
+                    <div class="skill-ring-wrap">
+                        <svg class="skill-ring" viewBox="0 0 36 36">
+                            <circle class="track" cx="18" cy="18" r="14" />
+                            <circle class="fill" cx="18" cy="18" r="14" data-pct="15" style="stroke:#fbbf24" />
+                        </svg>
+                        <span class="skill-ring-pct">15%</span>
+                    </div>
+                </div>
+
+            </div><!-- /skills-grid -->
+        </div>
+    </section>
+
+    <!-- ── PROJECTS ───────────────────────────────────────────── -->
+    <section id="projects">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <div class="section-label">// 03 — projects</div>
+                <h2 class="section-title">Things I've Built</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Project 01 -->
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="project-card">
+                        <div class="project-num">01 / FEATURED</div>
+                        <div class="project-title">Alena — Pearl of the Orient</div>
+                        <p class="project-desc">A full cruise booking website built in PHP and MySQL on XAMPP. Features
+                            a custom dark design system, session-based auth, and dynamic content management.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">Bootstrap</span>
+                            <span class="project-tag">XAMPP</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <i class="bi bi-arrow-right"></i> View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 02 -->
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="project-card">
+                        <div class="project-num">02</div>
+                        <div class="project-title">Portfolio v1</div>
+                        <p class="project-desc">A personal portfolio website designed to showcase my work as a student
+                            developer. Built with HTML, CSS, and vanilla JavaScript — no frameworks.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <i class="bi bi-arrow-right"></i> View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 03 -->
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="project-card">
+                        <div class="project-num">03</div>
+                        <div class="project-title">Coming Soon</div>
+                        <p class="project-desc">More projects in progress. Currently building, learning, and breaking
+                            things. Check back here for updates as new work gets shipped.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">WIP</span>
+                        </div>
+                        <a href="#contact" class="project-link">
+                            <i class="bi bi-arrow-right"></i> Collaborate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── TESTIMONIALS ───────────────────────────────────────── -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <div class="section-label">// 04 — testimonials</div>
+                <h2 class="section-title">What People Say</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4 reveal">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Gab is one of the most dedicated students I've worked with. He takes
+                            feedback seriously and always comes back with something better than expected.</p>
+                        <div class="testimonial-author">Prof. Sample Name</div>
+                        <div class="testimonial-role">IT Instructor — Sample University</div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">Super reliable teammate. Whenever we had a project, Gab made sure
+                            the code was clean and the design was on point. Great eye for detail.</p>
+                        <div class="testimonial-author">Classmate / Teammate</div>
+                        <div class="testimonial-role">Student Developer</div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">He built our group's website almost entirely on his own and made it
+                            look professional. Fast learner, good communicator, solid developer.</p>
+                        <div class="testimonial-author">Group Project Member</div>
+                        <div class="testimonial-role">Classmate</div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center mt-4"
+                style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">
+                * Placeholder testimonials — replace with real ones as you collect them.
+            </p>
+        </div>
+    </section>
+
+    <!-- ── CONTACT ────────────────────────────────────────────── -->
+    <section id="contact">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-5 reveal">
+                    <div class="section-label">// 05 — contact</div>
+                    <h2 class="section-title">Let's Build Something</h2>
+                    <div class="divider"></div>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 36px;">
+                        Open to internships, collaborations, freelance work, or just a good conversation about code.
+                        Drop me a message.
+                    </p>
+
+                    <div class="contact-info-item">
+                        <i class="bi bi-envelope contact-icon"></i>
+                        <div>
+                            <div class="contact-info-label">Email</div>
+                            <div class="contact-info-value">gabriel@example.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="bi bi-geo-alt contact-icon"></i>
+                        <div>
+                            <div class="contact-info-label">Location</div>
+                            <div class="contact-info-value">Dasmariñas, Cavite, Philippines</div>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="bi bi-github contact-icon"></i>
+                        <div>
+                            <div class="contact-info-label">GitHub</div>
+                            <div class="contact-info-value">github.com/Patdu-G</div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn-primary-cyan mt-3" id="download-resume">
+                        <i class="bi bi-download me-2"></i>Download Resume
+                    </a>
+                </div>
+
+                <div class="col-lg-7 reveal">
+                    <div class="contact-form-wrap">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label-mono">Your Name</label>
+                                <input type="text" class="form-control-dark" placeholder="Juan dela Cruz" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label-mono">Email Address</label>
+                                <input type="email" class="form-control-dark" placeholder="juan@email.com" />
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label-mono">Subject</label>
+                                <input type="text" class="form-control-dark" placeholder="Internship Inquiry" />
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label-mono">Message</label>
+                                <textarea class="form-control-dark" rows="5"
+                                    placeholder="Hey Gab, I wanted to reach out about..."></textarea>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <button class="btn-primary-cyan w-100" onclick="handleFormSubmit(this)">
+                                    Send Message <i class="bi bi-arrow-right ms-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ─────────────────────────────────────────────── -->
+    <footer>
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <span class="footer-copy">© 2025 Patrio Gabriel Patdu — Built with HTML, CSS, JS & Bootstrap</span>
+            <div class="footer-links">
+                <a href="https://github.com/Patdu-G" target="_blank"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <a href="#hero">Back to top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
